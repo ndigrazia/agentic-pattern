@@ -1,0 +1,31 @@
+# Artificial Intelligence, Machine Learning & Modern LLM Concepts
+
+## 1. Large Language Models (LLMs) & Foundation Models
+Large Language Models are deep learning models based on the Transformer architecture, typically trained on vast corpora of text data using self-supervised learning objectives (such as autoregressive next-token prediction).
+- Transformer Architecture: Introduced in "Attention Is All You Need" (Vaswani et al., 2017), utilizing multi-head self-attention mechanisms and positional encodings instead of recurrent connections.
+- Parameter Scales: Modern frontier models range from 7 billion to over 1 trillion parameters, exhibiting emergent abilities in reasoning, coding, and multilingual translation.
+- Alignment & Post-Training: Supervised Fine-Tuning (SFT), Reinforcement Learning from Human Feedback (RLHF), and Direct Preference Optimization (DPO) align raw base models to follow human instructions safely and effectively.
+
+## 2. Retrieval-Augmented Generation (RAG)
+Retrieval-Augmented Generation enhances generative models by fetching relevant context from external knowledge bases before generating an answer.
+- Chunking Strategies: Documents are divided into manageable chunks (e.g., recursive character splitting, semantic boundary chunking, token-limited chunking) with overlaps to preserve contextual continuity.
+- Vector Embeddings: Text passages and queries are converted into dense vector representations using embedding models (e.g., text-embedding-004, text-embedding-3-large).
+- Vector Databases: Specialized systems like Vertex AI Vector Search, Pinecone, Milvus, Qdrant, and Chroma perform Approximate Nearest Neighbor (ANN) search via algorithms like HNSW and ScaNN.
+- Hybrid Search: Combines dense vector retrieval (semantic relevance) with sparse lexical retrieval (e.g., BM25 for exact keyword matching), reranked using Cross-Encoder models.
+
+## 3. Vertex AI Search and Enterprise Discovery
+Vertex AI Search (formerly Generative AI App Builder / Enterprise Search) provides enterprise-grade semantic search, summarization, and question-answering over diverse corporate repositories.
+- Data Stores: Managed containers supporting unstructured data (PDFs, HTML, Word), structured data (BigQuery, JSON), and website content.
+- Grounding: Ties LLM generative answers directly to verified enterprise data stores, providing inline source citations and drastically reducing hallucinations.
+- Query Understanding & Autocomplete: Built-in spell correction, synonym expansion, and entity extraction tailored to domain terminology.
+
+## 4. Autonomous AI Agents & Workflows
+AI Agents leverage LLMs as cognitive reasoning engines capable of planning, invoking tools, and maintaining memory across multi-step tasks.
+- Planning & Decomposition: Techniques like ReAct (Reasoning + Acting), Chain of Thought (CoT), and Plan-and-Solve enable agents to decompose complex objectives into sequential tool executions.
+- Tool Calling / Function Calling: Models generate structured JSON schemas invoking external APIs, databases, or calculation engines.
+- Agentic Patterns: Routing, Reflection / Self-Correction, Evaluator-Optimizer loops, and Multi-Agent Orchestration.
+
+## 5. Model Evaluation and Observability
+- Benchmarks: Standardized evaluations including MMLU, GSM8K, HumanEval, and Chatbot Arena Elo ratings.
+- RAG Metrics: Faithfulness, Answer Relevance, Context Precision, and Context Recall (e.g., Ragas, TruLens frameworks).
+- Tracing & Telemetry: OpenTelemetry, LangSmith, and Langfuse for monitoring token consumption, latency, and agent execution graphs.
