@@ -354,13 +354,46 @@ curl -X GET \
   "${API_ENDPOINT}/v1/projects/${PROJECT_ID}/locations/${LOCATION}/collections/default_collection/dataStores"
 ```
 
-### Delete Data Store
+### Delete Data Store (Cleanup)
+
+To permanently delete a data store and all of its indexed documents:
 
 ```bash
 curl -X DELETE \
   -H "Authorization: Bearer $(gcloud auth print-access-token)" \
   -H "X-Goog-User-Project: ${PROJECT_ID}" \
   "${API_ENDPOINT}/v1/projects/${PROJECT_ID}/locations/${LOCATION}/collections/default_collection/dataStores/${DATA_STORE_ID}"
+```
+
+#### Expected Response:
+```json
+{
+  "name": "projects/.../locations/global/collections/default_collection/operations/delete-data-store-XXXXX",
+  "done": true
+}
+```
+
+#### Verify Deletion:
+Running a `GET` on the deleted data store will return a `404 Not Found`:
+```bash
+curl -X GET \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "X-Goog-User-Project: ${PROJECT_ID}" \
+  "${API_ENDPOINT}/v1/projects/${PROJECT_ID}/locations/${LOCATION}/collections/default_collection/dataStores/${DATA_STORE_ID}"
+```
+```json
+{
+  "error": {
+    "code": 404,
+    "message": "Data store ... not found.",
+    "status": "NOT_FOUND"
+  }
+}
+```
+
+*(Optional)* Clean up the staged file from Google Cloud Storage:
+```bash
+gcloud storage rm "gs://${BUCKET_NAME}/vertex_ai_search/ai_data.txt"
 ```
 
 ---
