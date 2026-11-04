@@ -1,0 +1,17 @@
+[project]
+name = "planning"
+version = "0.1.0"
+description = "Planning pattern example using Google ADK"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk>=2.13.0",
+    "google-genai>=2.10.0",
+    "langchain>=1.3.11",
+    "langchain-google-genai>=4.2.5",
+    "langgraph>=1.2.18",
+    "nest-asyncio>=1.6.0",
+    "openai>=2.54.0",
+    "python-dotenv>=1.2.4",
+]
+
