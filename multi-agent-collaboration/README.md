@@ -16,8 +16,8 @@ The Multi-Agent Collaboration Pattern coordinates specialized agents with distin
 
 ## File Structure
 
-- `adk.py`: Core implementation of `Greeter`, `TaskExecutor`, `Coordinator`, and runner helpers.
-- `main.py`: Entrypoint delegating to `adk.py`.
+- `adk_executor.py`: Core implementation of `Greeter`, `TaskExecutor`, `Coordinator`, sequential workflow, and runner helpers.
+- `adk_looper.py`: Cyclic loop workflow pattern using `Workflow`, `LlmAgent` (`ProcessingStep`), `ConditionChecker`, and `CompletionStep` with state inspection tools and conditional route transitions.
 - `pyproject.toml`: Dependencies.
 - `.env`: Environment variables (`GEMINI_MODEL_NAME`, `GOOGLE_API_KEY`).
 
@@ -25,37 +25,32 @@ The Multi-Agent Collaboration Pattern coordinates specialized agents with distin
 
 ## How to Run
 
-### 1. Execute Both Agents (Complete Demonstration)
+### 1. Execute Loop Pattern (`adk_looper.py`)
+Runs the iterative agent loop (`StatusPoller`) with `ProcessingStep` and `ConditionChecker`:
+
+```bash
+cd ~/python/pattern/multi-agent-collaboration
+uv run python adk_looper.py
+```
+
+Or pass a custom prompt:
+```bash
+uv run python adk_looper.py "Run a 3-step pipeline and set status to completed on step 3."
+```
+
+### 2. Execute Multi-Agent Collaboration Suite (`adk_executor.py`)
 Runs `Greeter` individually, `TaskExecutor` individually, and both collaboratively via `Coordinator`:
 
 ```bash
 cd ~/python/pattern/multi-agent-collaboration
-uv run python adk.py
+uv run python adk_executor.py
 ```
 
-or:
-
+#### Individual Agent Execution:
 ```bash
-uv run python main.py
-```
-
-### 2. Execute Only the Greeter Agent
-```bash
-uv run python adk.py greeter
-```
-
-### 3. Execute Only the TaskExecutor Agent
-```bash
-uv run python adk.py task
-```
-
-### 4. Execute Both Agents via Coordinator Delegation
-```bash
-uv run python adk.py coordinator
-```
-
-### 5. Execute Both Agents via Sequential Workflow Pipeline
-```bash
-uv run python adk.py workflow
+uv run python adk_executor.py greeter
+uv run python adk_executor.py task
+uv run python adk_executor.py coordinator
+uv run python adk_executor.py workflow
 ```
 
