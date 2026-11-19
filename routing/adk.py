@@ -121,7 +121,6 @@ async def run_coordinator(runner: InMemoryRunner, request: str):
 async def main():
     """Main function to run the ADK example."""
     print("--- Google ADK Routing Example (ADK Auto-Flow Style) ---")
-    print("Note: This requires Google ADK installed and authenticated.")
     runner = InMemoryRunner(coordinator)
     # Example Usage
     result_a = await run_coordinator(runner, "Book me a hotel in Paris.")
