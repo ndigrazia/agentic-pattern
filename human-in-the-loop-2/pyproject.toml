@@ -1,0 +1,14 @@
+[project]
+name = "human-in-the-loop-2"
+version = "0.1.0"
+description = "Cross-Process Human-in-the-Loop Pattern using Google ADK"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk>=2.13.0",
+    "google-genai>=2.10.0",
+    "nest-asyncio>=1.6.0",
+    "pydantic>=2.10.0",
+    "python-dotenv>=1.2.0",
+]
+
