@@ -1,0 +1,28 @@
+{
+  "name": "math_agent",
+  "description": "Specialized math and computation agent capable of performing arithmetic, powers, and factorials.",
+  "version": "1.0.0",
+  "url": "http://localhost:8000/a2a/math_agent",
+  "capabilities": {
+    "streaming": true
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "math_operations",
+      "name": "Math Operations",
+      "description": "Performs exact mathematical operations like addition, multiplication, exponentiation, and factorial.",
+      "tags": [
+        "math",
+        "calculator",
+        "computation"
+      ]
+    }
+  ]
+}

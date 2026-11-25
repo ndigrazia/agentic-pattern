@@ -1,0 +1,19 @@
+[project]
+name = "a2a-2"
+version = "0.1.0"
+description = "Multi-Agent A2A pattern with Google ADK Web and Gemini LLM"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk>=2.13.0",
+    "google-genai>=2.10.0",
+    "a2a-sdk[http-server]>=0.3.26,<2",
+    "python-dotenv>=1.2.0",
+    "httpx>=0.28.0",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+
