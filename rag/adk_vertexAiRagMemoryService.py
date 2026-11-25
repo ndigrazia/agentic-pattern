@@ -23,7 +23,7 @@ SIMILARITY_TOP_K = int(os.getenv("SIMILARITY_TOP_K", "5"))
 VECTOR_DISTANCE_THRESHOLD = float(os.getenv("VECTOR_DISTANCE_THRESHOLD", "0.7"))
 RAG_CORPUS_RESOURCE_NAME = os.getenv(
     "RAG_CORPUS_RESOURCE_NAME",
-    "projects/tma-gemini-enterprise/locations/us-central1/ragCorpora/2047048758360801280",
+    "projects/your-project-id/locations/us-central1/ragCorpora/your-corpus-id",
 )
 
 # 1. Initialize VertexAiRagMemoryService with RAG corpus configuration

@@ -204,7 +204,7 @@ corpus = client.rag.create_corpus(
 )
 
 print(f"Corpus Name: {corpus.name}")
-# Output: projects/154372397551/locations/us-central1/ragCorpora/204704875836080120
+# Output: projects/<project-number>/locations/us-central1/ragCorpora/<corpus-id>
 ```
 
 ### 6. Verify Corpus Status
@@ -231,8 +231,8 @@ The managed RAG corpus provisioned and configured for this repository:
 | :--- | :--- |
 | **Project** | `your-project-id` |
 | **Location** | `us-central1` |
-| **Corpus ID** | `204704875836080120` |
-| **Full Resource Name** | `projects/your-project-id/locations/us-central1/ragCorpora/204704875836080120` |
+| **Corpus ID** | `your-corpus-id` |
+| **Full Resource Name** | `projects/your-project-id/locations/us-central1/ragCorpora/your-corpus-id` |
 | **Display Name** | `adk-rag-memory-corpus` |
 | **Embedding Model** | `text-embedding-005` (768 dimensions) |
 | **Vector DB Mode** | Serverless (`RagManagedVertexVectorSearch`) |
@@ -248,7 +248,7 @@ GEMINI_MODEL_NAME=gemini-2.5-flash
 GOOGLE_API_KEY=your_gemini_api_key_here
 GOOGLE_CLOUD_PROJECT=your-project-id
 GOOGLE_CLOUD_LOCATION=us-central1
-RAG_CORPUS_RESOURCE_NAME=projects/your-project-id/locations/us-central1/ragCorpora/204704875836080120
+RAG_CORPUS_RESOURCE_NAME=projects/your-project-id/locations/us-central1/ragCorpora/your-corpus-id
 ```
 
 Install dependencies:
